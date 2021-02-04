@@ -104,6 +104,8 @@ type DataVolumeSourceRegistry struct {
 	SecretRef string `json:"secretRef,omitempty"`
 	//CertConfigMap provides a reference to the Registry certs
 	CertConfigMap string `json:"certConfigMap,omitempty"`
+	//Namespace provides the secret or configmap in which namespace
+	Namespace string `json:"namespace,omitempty"`
 }
 
 // DataVolumeSourceHTTP can be either an http or https endpoint, with an optional basic auth user name and password, and an optional configmap containing additional CAs
@@ -116,6 +118,8 @@ type DataVolumeSourceHTTP struct {
 	// CertConfigMap is a configmap reference, containing a Certificate Authority(CA) public key, and a base64 encoded pem certificate
 	// +optional
 	CertConfigMap string `json:"certConfigMap,omitempty"`
+	//Namespace provides the secret or configmap in which namespace
+	Namespace string `json:"namespace,omitempty"`
 }
 
 // DataVolumeSourceImageIO provides the parameters to create a Data Volume from an imageio source
